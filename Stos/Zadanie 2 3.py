@@ -1,6 +1,5 @@
 from Zadanie13 import Stack
-
-def parCheker(symbolString):
+def SPR(symbolString):
     s= Stack()
     index = 0
     error = True
@@ -13,9 +12,6 @@ def parCheker(symbolString):
         index = index+1
     if error and s.isEmpty(): return True
     else : return False
-
-print(parCheker('(()()()())'))
-
-print(parCheker('((((())))'))
-
-print(parCheker('(()()()())')) 
+print(SPR('(()()()())'))
+print(SPR('((((())))'))
+print(SPR('(()()()())')) 
