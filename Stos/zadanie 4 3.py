@@ -19,7 +19,7 @@ class Stack:
             return None
     def size(self):
         return len(self.items)
-def oblicz_wartosc_postfix(wyrazenie):
+def oblicz_postfix(wyrazenie):
     stos = Stack()
     for token in wyrazenie:
         if token.isdigit() or (token.replace('.', '', 1).isdigit() and token.count('.') == 1):
@@ -61,8 +61,8 @@ def oblicz_wartosc_postfix(wyrazenie):
     else:
         print("Error: Złe wyrażenie")
         return None
-wyrazenie_postfix = input("Wprowadź wyrażenie w notacji postfiksowej: ").split()
-wynik = oblicz_wartosc_postfix(wyrazenie_postfix)
+postfix = input("Wprowadź wyrażenie w notacji postfiksowej: ").split()
+wynik = oblicz_postfix(postfix)
 if wynik is not None:
     print("Wynik:", wynik)
 
