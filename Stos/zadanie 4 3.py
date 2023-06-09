@@ -9,13 +9,13 @@ class Stack:
         if not self.isEmpty():
             return self.items.pop()
         else:
-            print("Stack is empty.")
+            print("Stack jest pusty.")
             return None
     def peek(self):
         if not self.isEmpty():
             return self.items[-1]
         else:
-            print("Stack is empty.")
+            print("Stack jest pusty.")
             return None
     def size(self):
         return len(self.items)
@@ -46,7 +46,7 @@ def oblicz_wartosc_postfix(wyrazenie):
                 wynik = operand1 / operand2
                 stos.push(wynik)
             else:
-                print("Error: Division by zero")
+                print("Error:Dzielenie przez 0")
                 return None
         elif token == '^':
             operand2 = stos.pop()
@@ -54,14 +54,15 @@ def oblicz_wartosc_postfix(wyrazenie):
             wynik = operand1 ** operand2
             stos.push(wynik)
         else:
-            print("Error: Invalid operator")
+            print("Error: Zły operator")
             return None
     if stos.size() == 1:
         return stos.pop()
     else:
-        print("Error: Invalid expression")
+        print("Error: Złe wyrażenie")
         return None
 wyrazenie_postfix = input("Wprowadź wyrażenie w notacji postfiksowej: ").split()
 wynik = oblicz_wartosc_postfix(wyrazenie_postfix)
 if wynik is not None:
     print("Wynik:", wynik)
+
